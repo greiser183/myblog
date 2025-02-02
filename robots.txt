@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://mrtravis.ggff.net/sitemap.xml
