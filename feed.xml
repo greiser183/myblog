@@ -3,26 +3,29 @@
     <title>Travis&#x27;s Blog</title>
     <link href="https://mrtravis.ggff.net/feed.xml" rel="self" />
     <link href="https://mrtravis.ggff.net" />
-    <updated>2025-02-02T19:46:25+08:00</updated>
+    <updated>2025-02-03T02:52:19+08:00</updated>
     <author>
         <name>Travis</name>
     </author>
     <id>https://mrtravis.ggff.net</id>
 
     <entry>
-        <title>Linux 快速开启Google BBR的方法，实现TCP高效单边加速</title>
+        <title>Linux 开启Google BBR，实现TCP高效单边加速</title>
         <author>
             <name>Travis</name>
         </author>
         <link href="https://mrtravis.ggff.net/linux-kuai-su-kai-qi-google-bbrde-fang-fashi-xian-tcpgao-xiao-dan-bian-jia-su.html"/>
         <id>https://mrtravis.ggff.net/linux-kuai-su-kai-qi-google-bbrde-fang-fashi-xian-tcpgao-xiao-dan-bian-jia-su.html</id>
         <media:content url="https://mrtravis.ggff.net/media/posts/5/IMG_7844Fu-Ben.jpg" medium="image" />
+            <category term="Ubuntu"/>
+            <category term="Linux"/>
+            <category term="Debain"/>
 
         <updated>2025-02-02T19:46:13+08:00</updated>
             <summary>
                 <![CDATA[
                         <img src="https://mrtravis.ggff.net/media/posts/5/IMG_7844Fu-Ben.jpg" alt="" />
-                    BBR 是谷歌公司的某个员工研发出来的服务器单边加速算法，Linux内核从4.9版开始集成BBR算法。相比锐速BBR的加速效果更为温和，并且占用内存小对服务器压力也很小，当时理想情况下是可以跑满整个服务器物理带宽，比锐速更加稳定，能够有效的降低服务器的网络丢包率，减少网络拥堵。由于Debian 9默认的内核版本就是4.9.x，我们不需要像别的系统需要更换内核，直接就能开启BBR算法。 提示：目前最新版Debian 10内核为4.19，也可以直接用该方法开启BBR。 1、修改系统变量 echo "net.core.default_qdisc=fq" &gt;&gt; /etc/sysctl.conf echo "net.ipv4.tcp_congestion_control=bbr"&hellip;
+                    BBR 是谷歌公司的某个员工研发出来的服务器单边加速算法，Linux内核从4.9版开始集成BBR算法。相比锐速BBR的加速效果更为温和，并且占用内存小对服务器压力也很小，当时理想情况下是可以跑满整个服务器物理带宽，比锐速更加稳定，能够有效的降低服务器的网络丢包率，减少网络拥堵。由于Debian 9默认的内核版本就是4.9.x，我们不需要像别的系统需要更换内核，直接就能开启BBR算法。 提示：目前最新版Debian 10内核为4.19，也可以直接用该方法开启BBR。 1、修改系统变量 echo "net.core.default_qdisc=fq"&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -31,8 +34,7 @@
                 <p>BBR 是谷歌公司的某个员工研发出来的服务器单边加速算法，Linux内核从4.9版开始集成BBR算法。相比锐速BBR的加速效果更为温和，并且占用内存小对服务器压力也很小，当时理想情况下是可以跑满整个服务器物理带宽，比锐速更加稳定，能够有效的降低服务器的网络丢包率，减少网络拥堵。由于Debian 9默认的内核版本就是4.9.x，我们不需要像别的系统需要更换内核，直接就能开启BBR算法。<br>提示：目前最新版Debian 10内核为4.19，也可以直接用该方法开启BBR。</p>
 <p>1、修改系统变量</p>
 <pre><code>echo "net.core.default_qdisc=fq" &gt;&gt; /etc/sysctl.conf
-echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
-</code></pre>
+echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf</code></pre>
 <p>2、保存生效</p>
 <pre><code>sysctl -p
 </code></pre>
@@ -51,7 +53,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
         </content>
     </entry>
     <entry>
-        <title>Linux 查看端口占用情况</title>
+        <title>Linux 查看端口占用情况命令</title>
         <author>
             <name>Travis</name>
         </author>
@@ -63,7 +65,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
             <summary>
                 <![CDATA[
                         <img src="https://mrtravis.ggff.net/media/posts/4/IMG_5128.jpg" alt="" />
-                    Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。 lsof lsof(list open files)是一个列出当前系统打开文件的工具。 lsof 查看端口占用语法格式：lsof&hellip;
+                    Linux 查看端口占用情况可以使用 lsof 和 netstat 命令。 lsof lsof(list&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -87,7 +89,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
         </content>
     </entry>
     <entry>
-        <title>Linux 下如何添加虚拟内存</title>
+        <title>Linux 下如何添加虚拟内存方法</title>
         <author>
             <name>Travis</name>
         </author>
@@ -99,7 +101,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
             <summary>
                 <![CDATA[
                         <img src="https://mrtravis.ggff.net/media/posts/3/IMG_8488Fu-Ben.jpg" alt="" />
-                    Linux操作系统有两种实现虚拟内存的方法：交换分区swap分区和交换文件swap文件。 采用交换分区的办法其实就是新建一个分区，然后将该分区挂载作为交换空间，方法步骤与传统的新建分区一样。只不过格式化分区和挂载分区分别采用mkswap和swapon命令。在创建分区之前，我们常常要用过fdisk -l和df -Th命令来查看硬盘信息和挂载信息，来确定分区的大小。 查看内存可以用命令： free -h 使用dd命令，来创建大小为2G的文件swapfile： dd if=/dev/zero of=/mnt/swapfile bs=1M&hellip;
+                    Linux操作系统有两种实现虚拟内存的方法：交换分区swap分区和交换文件swap文件。 采用交换分区的办法其实就是新建一个分区，然后将该分区挂载作为交换空间，方法步骤与传统的新建分区一样。只不过格式化分区和挂载分区分别采用mkswap和swapon命令。在创建分区之前，我们常常要用过fdisk -l和df -Th命令来查看硬盘信息和挂载信息，来确定分区的大小。 查看内存可以用命令： free -h 使用dd命令，来创建大小为2G的文件swapfile：&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -126,7 +128,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
         </content>
     </entry>
     <entry>
-        <title>Ubuntu系统中防火墙的使用和开放端口</title>
+        <title>Ubuntu 系统中防火墙的使用和开放端口</title>
         <author>
             <name>Travis</name>
         </author>
@@ -138,7 +140,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
             <summary>
                 <![CDATA[
                         <img src="https://mrtravis.ggff.net/media/posts/2/IMG_7214Fu-Ben.jpg" alt="" />
-                    不管是在Linux服务器还是在Ubuntu服务器中，当防火墙开启以后，会开放一些常用的端口，这时常常直接到自己Windows上telnet已经开放的端口，通常会忽略开放的这些端口在服务器中是否有程序进行监听，如果没有程序进行监听，telnet开放的这些端口时往往是不通的。 1、Ubuntu查看防火墙的状态 在Ubuntu系统进行安装的时候默认安装了ufw防火墙 查看防火墙的状态 命令： sudo ufw status 系统提示： “Status: inactive”状态：不活跃 上面提示表示没有开启防火墙，并不是没有安装防火墙&hellip;
+                    不管是在Linux服务器还是在Ubuntu服务器中，当防火墙开启以后，会开放一些常用的端口，这时常常直接到自己Windows上telnet已经开放的端口，通常会忽略开放的这些端口在服务器中是否有程序进行监听，如果没有程序进行监听，telnet开放的这些端口时往往是不通的。 1、Ubuntu查看防火墙的状态 在Ubuntu系统进行安装的时候默认安装了ufw防火墙 查看防火墙的状态 命令： sudo ufw status&hellip;
                 ]]>
             </summary>
         <content type="html">
@@ -176,7 +178,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
         </content>
     </entry>
     <entry>
-        <title>Linux (Ubuntu/Debain)下开启SSH，并且允许root用户远程登录</title>
+        <title>Linux 开启SSH，允许root用户远程登录</title>
         <author>
             <name>Travis</name>
         </author>
@@ -188,7 +190,7 @@ echo "net.ipv4.tcp_congestion_control=bbr" &gt;&gt; /etc/sysctl.conf
             <summary>
                 <![CDATA[
                         <img src="https://mrtravis.ggff.net/media/posts/1/IMG_7627Fu-Ben.jpg" alt="" />
-                    你可能想知道如何以root用户登录Ubuntu/Debain，或者默认的root密码是什么。在Linux中，出于安全原因，默认情况下禁用了root用户。本教程说明了如何在Linux (Ubuntu/Debain)中启用和禁用root用户。 一、设置root密码 1.先选择从浏览器打开ssh连接服务器 2.切换到root账号 sudo -i 3.设置root密码 passwd 然后会要求输入新密码，然后再重复一次密码，输入密码的时候不会显示出来，所以直接输入密码，然后回车，再然后重复输入密码回车 二、开启SSH权限 ①方法一&hellip;
+                    你可能想知道如何以root用户登录Ubuntu/Debain，或者默认的root密码是什么。在Linux中，出于安全原因，默认情况下禁用了root用户。本教程说明了如何在Linux (Ubuntu/Debain)中启用和禁用root用户。 一、设置root密码 1.先选择从浏览器打开ssh连接服务器 2.切换到root账号 sudo -i 3.设置root密码&hellip;
                 ]]>
             </summary>
         <content type="html">
